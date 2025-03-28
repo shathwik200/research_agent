@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Agent</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <h1>Research Agent</h1>
+        <form method="POST" action="/" id="researchForm">
+          <div class="search-box">
+            <input
+              type="text"
+              name="topic"
+              placeholder="Enter your research topic..."
+              required
+            />
+            <button type="submit">Research</button>
+          </div>
+        </form>
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+      </div>
+
+      {% if content %}
+      <div class="content">{{ content | safe }}</div>
+      {% endif %}
+    </div>
+
+    <div class="loading" id="loadingOverlay" style="display: none">
+      <div class="spinner"></div>
+      <p>Researching your topic... This may take a few minutes.</p>
+    </div>
+
+    <script>
+      document.getElementById("researchForm").onsubmit = function () {
+        document.getElementById("loadingOverlay").style.display = "flex";
+      };
+    </script>
+  </body>
+</html>

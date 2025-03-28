@@ -1,0 +1,136 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.search-container h1 {
+  color: #1a73e8;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.search-box {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e1e4e8;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1557b0;
+}
+
+.content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+h1 {
+  color: #1a73e8;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 15px;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-top: 30px;
+}
+
+p {
+  color: #4a4a4a;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading p {
+  margin-top: 20px;
+  color: #1a73e8;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #fde8e8;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
